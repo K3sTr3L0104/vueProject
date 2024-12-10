@@ -2,12 +2,15 @@
 import { ref } from 'vue';
 import HelloWorld from './components/HelloWorld.vue'
 import Recipe from './components/Recipe.vue'
-
+var newObj = ""
 var asd = ref(0);
-
 const newPage = () => {
   asd.value = 1;
   console.log(asd.value)
+}
+
+const kiegeszit = (obj)=>{
+  console.log(newObj);
 }
 
 const oldPage = () => {
@@ -47,8 +50,8 @@ const oldPage = () => {
 
   </header>
   <main>
-    <HelloWorld v-if="asd == 0"/>
-    <Recipe v-if="asd > 0"/> 
+    <HelloWorld v-if="asd == 0" :obj="newObj"/>
+    <Recipe v-if="asd > 0" @addNewRecipe="kiegeszit"/> 
     
   </main>
   <footer>

@@ -1,12 +1,17 @@
 <script setup>
 import { recipes } from '../../data/dummyData';
-import { ref, watch } from 'vue';
-
+import { ref, watch, defineProps } from 'vue';
+const props = defineProps({
+    obj: Object
+})
 var chose = ref("Elkészítési idő szerint");
 var difficultyFilter = ref("Minden nehézség");
 var selectedItems = ref([...recipes]);
 var searchValue = ref("");
-
+const addRecipe = (recipe) => {
+  recipes.value.push(recipe);
+  console.log(recipes)
+}
 watch([chose, difficultyFilter, searchValue], () => {
   let filteredRecipes = [...recipes];
   if (searchValue.value) {
