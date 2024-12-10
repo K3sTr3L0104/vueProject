@@ -16,7 +16,7 @@ watch([chose, difficultyFilter, searchValue], () => {
   }
 
   if (difficultyFilter.value !== "Minden nehézség") {
-    filteredRecipes = filteredRecipes.filter(recipe => recipe.difficulty === difficultyFilter.value);
+    filteredRecipes = filteredRecipes.filter(recipe => recipe.difficulty === difficultyFilter.value); // for ciklus
   }
 
   if (chose.value === "növekvő") {
