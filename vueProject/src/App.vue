@@ -1,6 +1,18 @@
 <script setup>
 import { ref } from 'vue';
 import HelloWorld from './components/HelloWorld.vue'
+import Recipe from './components/Recipe.vue'
+
+var asd = ref(0);
+
+const newPage = () => {
+  asd.value = 1;
+  console.log(asd.value)
+}
+
+const oldPage = () => {
+  asd.value = 0;
+}
 </script>
 
 <template>
@@ -18,7 +30,7 @@ import HelloWorld from './components/HelloWorld.vue'
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Receptek</a>
+                <a class="nav-link active" aria-current="page" href="#" @click="oldPage()">Receptek</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" @click="newPage()">Új recept</a>
@@ -35,7 +47,9 @@ import HelloWorld from './components/HelloWorld.vue'
 
   </header>
   <main>
-    <HelloWorld/>
+    <HelloWorld v-if="asd == 0"/>
+    <Recipe v-if="asd > 0"/> 
+    
   </main>
   <footer>
 
@@ -59,3 +73,4 @@ span {
   margin-right: 20px;
 }
 </style>
+
