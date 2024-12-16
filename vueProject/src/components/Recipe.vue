@@ -15,7 +15,6 @@ const join = () =>{
 </script>
 <template>
     <header>
-        
     </header>
     <main>
         <section>
