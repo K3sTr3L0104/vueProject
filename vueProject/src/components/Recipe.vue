@@ -11,6 +11,10 @@ const join = () =>{
     recipes.push(obj)
     console.log(recipes)
     emit('addNewRecipe',obj)
+    alert("Sikeres feltöltés!")
+    name.value = "";
+    difficulty.value = "";
+    cookTime.value = 0;
 }
 </script>
 <template>

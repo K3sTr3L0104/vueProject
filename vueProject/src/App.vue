@@ -11,6 +11,7 @@ const newPage = () => {
 
 const kiegeszit = (obj)=>{
   console.log(newObj);
+  asd.value = 0;
 }
 
 const oldPage = () => {
